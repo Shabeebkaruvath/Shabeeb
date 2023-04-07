@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Shabeeb/static/css/main.5e73c890.css",
-    "main.js": "/Shabeeb/static/js/main.0d511fcf.js",
+    "main.js": "/Shabeeb/static/js/main.811f64f3.js",
     "index.html": "/Shabeeb/index.html",
     "main.5e73c890.css.map": "/Shabeeb/static/css/main.5e73c890.css.map",
-    "main.0d511fcf.js.map": "/Shabeeb/static/js/main.0d511fcf.js.map"
+    "main.811f64f3.js.map": "/Shabeeb/static/js/main.811f64f3.js.map"
   },
   "entrypoints": [
     "static/css/main.5e73c890.css",
-    "static/js/main.0d511fcf.js"
+    "static/js/main.811f64f3.js"
   ]
 }

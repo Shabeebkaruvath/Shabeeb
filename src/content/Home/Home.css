@@ -1,0 +1,12 @@
+
+ .home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 10px;
+ }
+ .myname{
+    font-size: 40px;
+ }

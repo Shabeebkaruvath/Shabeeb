@@ -7,7 +7,7 @@ function About() {
     <div>
       About
     <button onClick={()=>{Navi('/')}}>home</button>
-    <Link to="/blog">blog</Link>
+    <Link to="Shabeeb/blog">blog</Link>
     </div>    
   )
 }

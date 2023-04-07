@@ -16,30 +16,30 @@ function App() {
     <div className="App">
       <Router>
         <div className="routediv">
-          <Link to="/" className="route">
+          <Link to="Shabeeb/" className="route">
             <img src={home} alt="" /> Home
           </Link>
-          <Link to="/about" className="route">
+          <Link to="Shabeeb/about" className="route">
             <img src={about} alt="" /> About
           </Link>
-          <Link to="/portfolio" className="route">
+          <Link to="Shabeeb/portfolio" className="route">
             <img src={portfolio} alt="" /> Portfolio
           </Link>
-          <Link to="/blog" className="route">
+          <Link to="Shabeeb/blog" className="route">
             <img src={blog} alt="" />
             Blog
           </Link>
-          <Link to="/contact" className="route">
+          <Link to="Shabeeb/contact" className="route">
             <img src={contact} alt="" /> Contact
           </Link>
         </div>
-        
+
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="Shabeeb/" element={<Home />} />
+          <Route path="Shabeeb/about" element={<About />} />
+          <Route path="Shabeeb/blog" element={<Blog />} />
+          <Route path="Shabeeb/portfolio" element={<Portfolio />} />
+          <Route path="Shabeeb/contact" element={<Contact />} />
         </Routes>
       </Router>
     </div>

@@ -23,7 +23,7 @@ function App() {
             <img src={about} alt="" /> About
           </Link>
           <Link to="Shabeeb/portfolio" className="route">
-            <img src={portfolio} alt="" /> Portfolio
+            <img src={portfolio} alt="" className="port"/> Portfolio
           </Link>
           <Link to="Shabeeb/blog" className="route">
             <img src={blog} alt="" />

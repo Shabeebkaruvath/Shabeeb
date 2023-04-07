@@ -4,9 +4,29 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: white;
-    padding: 10px;
+    color: white;   
  }
  .myname{
     font-size: 40px;
+ }
+
+ @media (max-width:320px) {
+   .home{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      color: white;  
+       
+   }
+ }
+ @media (max-width:375px) {
+   .home{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      color: white;  
+      height:577px; 
+   }
  }

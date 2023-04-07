@@ -1,9 +1,8 @@
 .App {
   text-align: center;
   display: flex;
-  
 }
-.route{
+.route {
   font-family: monospace;
   text-decoration: none;
   color: black;
@@ -11,11 +10,11 @@
   display: flex;
   margin: 35px;
   flex-direction: column;
-   
+
   align-items: center;
   justify-content: center;
 }
- 
+
 /* .route:hover{
  
   background-color: black;
@@ -24,7 +23,7 @@
   color: rgb(255, 255, 255);
   display: block;
 } */
-.routediv{
+.routediv {
   position: relative;
   background-color: rgb(255, 255, 255);
   height: 46em;
@@ -33,14 +32,80 @@
   width: 15%;
   border-right: 1px solid rgb(226, 226, 226);
 }
-.home{
+.home {
   text-align: center;
   width: 85%;
   display: flex;
-   
 }
-.logo{
+.logo {
   color: #000;
   text-decoration: none;
   font-family: system-ui;
+}
+@media (max-width: 320px) {
+  .App {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .routediv {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    justify-content: space-evenly;
+    border-right: none;
+    height: 60px;
+  }
+  .route {
+    font-family: monospace;
+    background-color: #ffffff;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    display: flex;
+    margin: 1px;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgb(107, 107, 107);
+  }
+
+  .port {
+    width: 44px;
+    height: 43px;
+  }
+}
+@media (max-width: 375px) {
+  .App {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .routediv {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    margin-left: 3px;
+    border-right: none;
+    height: 60px;
+    width: -webkit-fill-available;
+    justify-content: space-evenly;
+  }
+  .route {
+    font-family: monospace;
+    background-color: #ffffff;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    display: flex;
+    margin: 1px;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgb(107, 107, 107);
+  }
+
+  .port {
+    width: 44px;
+    height: 43px;
+  }
 }

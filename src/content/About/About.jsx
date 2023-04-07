@@ -1,15 +1,17 @@
-import React from 'react'
-import { useNavigate,Link } from "react-router-dom";
+import React from "react";
+import "./About.css";
 function About() {
-  var Navi = useNavigate();
   return (
-     
-    <div>
-      About
-    <button onClick={()=>{Navi('/')}}>home</button>
-    <Link to="Shabeeb/blog">blog</Link>
-    </div>    
-  )
+    <div
+      style={{
+        backgroundImage: ' url("https://wallpapercave.com/wp/wp5942140.jpg")',
+        width: "-webkit-fill-available",
+      }}
+      className="aboutdiv"
+    >
+      <h1>About</h1>
+    </div>
+  );
 }
 
-export default About
+export default About;

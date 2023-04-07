@@ -10,7 +10,7 @@ function Home() {
         width: "-webkit-fill-available",
       }}
     >
-      <h3>Hey there</h3>
+      <h3>Hey there!</h3>
       <h1 className="myname">I'm Shabeeb</h1>
     </div>
   );

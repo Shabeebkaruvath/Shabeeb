@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shabeeb/static/css/main.5e73c890.css",
+    "main.js": "/Shabeeb/static/js/main.0d511fcf.js",
+    "index.html": "/Shabeeb/index.html",
+    "main.5e73c890.css.map": "/Shabeeb/static/css/main.5e73c890.css.map",
+    "main.0d511fcf.js.map": "/Shabeeb/static/js/main.0d511fcf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e73c890.css",
+    "static/js/main.0d511fcf.js"
+  ]
+}

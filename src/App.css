@@ -15,14 +15,6 @@
   justify-content: center;
 }
 
-/* .route:hover{
- 
-  background-color: black;
-  font-family: monospace;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  display: block;
-} */
 .routediv {
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -43,68 +35,113 @@
   font-family: system-ui;
 }
 @media (max-width: 320px) {
-  .App {
-    display: flex;
-    flex-direction: column-reverse;
+  .home {
+    height: 90%;
+    width: 100%;
   }
   .routediv {
     position: fixed;
-    background-color: rgb(255, 255, 255);
+    background-color: antiquewhite;
     display: flex;
     flex-direction: row;
-    width: -webkit-fill-available;
-    justify-content: space-evenly;
-    border-right: none;
-    height: 60px;
+    width: 100%;
+    height: 85px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .App {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
   }
   .route {
     font-family: monospace;
-    background-color: #ffffff;
     text-decoration: none;
     color: black;
-    font-size: 16px;
+    font-size: 10px;
     display: flex;
-    margin: 1px;
-    flex-direction: column;
-    align-items: center;
-    border-right: 1px solid rgb(107, 107, 107);
-  }
 
-  .port {
+    margin: 0px;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .pic {
     width: 44px;
     height: 43px;
   }
 }
 @media (max-width: 375px) {
+  .home {
+    height: 90%;
+    width: 100%;
+  }
+  .routediv {
+    position: fixed;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 85px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
   .App {
     display: flex;
     flex-direction: column-reverse;
   }
+  .route {
+    font-family: monospace;
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+    display: flex;
+
+    margin: 0px;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .pic {
+    width: 44px;
+    height: 43px;
+  }
+}
+@media (max-width: 425px) {
+  .home {
+    height: 90%;
+    width: 100%;
+  }
   .routediv {
     position: fixed;
-    background-color: rgb(255, 255, 255);
+    background-color: antiquewhite;
     display: flex;
     flex-direction: row;
-    margin-left: 3px;
-    border-right: none;
-    height: 60px;
-    width: -webkit-fill-available;
-    justify-content: space-evenly;
+    width: 100%;
+    height: 85px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .App {
+    display: flex;
+    flex-direction: column-reverse;
   }
   .route {
     font-family: monospace;
-    background-color: #ffffff;
     text-decoration: none;
     color: black;
-    font-size: 16px;
+    font-size: 10px;
     display: flex;
-    margin: 1px;
-    flex-direction: column;
-    align-items: center;
-    border-right: 1px solid rgb(107, 107, 107);
-  }
 
-  .port {
+    margin: 0px;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .pic {
     width: 44px;
     height: 43px;
   }

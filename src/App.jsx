@@ -17,20 +17,20 @@ function App() {
       <Router>
         <div className="routediv">
           <Link to="Shabeeb/" className="route">
-            <img src={home} alt="" /> Home
+            <img src={home} alt="" className="pic"/> Home
           </Link>
           <Link to="Shabeeb/about" className="route">
-            <img src={about} alt="" /> About
+            <img src={about} alt="" className="pic"/> About
           </Link>
           <Link to="Shabeeb/portfolio" className="route">
-            <img src={portfolio} alt="" className="port"/> Portfolio
+            <img src={portfolio} alt="" className="pic"/> Portfolio
           </Link>
           <Link to="Shabeeb/blog" className="route">
-            <img src={blog} alt="" />
+            <img src={blog} alt="" className="pic"/>
             Blog
           </Link>
           <Link to="Shabeeb/contact" className="route">
-            <img src={contact} alt="" /> Contact
+            <img src={contact} alt="" className="pic"/> Contact
           </Link>
         </div>
 

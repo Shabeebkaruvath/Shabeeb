@@ -144,3 +144,17 @@
     height: 43px;
   }
 }
+@media (max-width: 577px) {
+   .route{
+    font-size: 15px;
+    font-family: serif;
+   }
+   .routediv{
+    font: 100;
+   }
+   .pic{
+    width: 25px;
+    height: 25px;
+   }
+  
+}

@@ -2,7 +2,7 @@
     color: white;
  }
  
- @media (max-width: 320px) {
+ @media (max-width: 320px) and (max-height:577px){
    .aboutdiv {
      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
      background-size: cover;
@@ -16,7 +16,7 @@
    }
    
  }
- @media (max-width: 375px) {
+ @media (max-width: 375px) and (max-height:577px){
   .aboutdiv {
     background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
     background-size: cover;
@@ -30,7 +30,7 @@
   }
   
 }
-@media (max-width: 425px) {
+@media (max-width: 425px) and (max-height:577px){
   .aboutdiv {
     background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
     background-size: cover;

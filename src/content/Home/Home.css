@@ -12,7 +12,7 @@
   font-size: 40px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 320px) and (max-height:577px){
   .home1 {
     background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
     background-size: cover;
@@ -28,7 +28,7 @@
     font-size: 40px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 375px) and (max-height:577px){
   .home1 {
     background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
     background-size: cover;
@@ -44,7 +44,7 @@
     font-size: 40px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 425px) and (max-height:577px){
   .home1 {
     background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
     background-size: cover;
@@ -62,3 +62,19 @@
 }
 
  
+@media (max-width: 577px) and (max-height:320px){
+  .home1 {
+    background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 38em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  .myname {
+    font-size: 40px;
+  }
+}

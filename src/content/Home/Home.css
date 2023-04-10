@@ -29,35 +29,36 @@
   }
 }
 @media (max-width: 375px) {
-   .home1 {
-     background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-     background-size: cover;
-     width: -webkit-fill-available;
-     height: 38em;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     text-align: center;
-     color: white;
-   }
-   .myname {
-     font-size: 40px;
-   }
- }
- @media (max-width: 425px) {
-   .home1 {
-     background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-     background-size: cover;
-     width: -webkit-fill-available;
-     height: 38em;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     text-align: center;
-     color: white;
-   }
-   .myname {
-     font-size: 40px;
-   }
- }
+  .home1 {
+    background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 38em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  .myname {
+    font-size: 40px;
+  }
+}
+@media (max-width: 425px) {
+  .home1 {
+    background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 38em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  .myname {
+    font-size: 40px;
+  }
+}
+
  

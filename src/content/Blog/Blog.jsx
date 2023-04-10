@@ -1,8 +1,8 @@
 import React from "react";
-
+import './Blog.css'
 function Blog() {
   return (
-    <div
+    <div className="blogdiv"
       style={{
         backgroundImage: ' url("https://wallpapercave.com/wp/wp5942140.jpg")',
         backgroundSize: "cover",

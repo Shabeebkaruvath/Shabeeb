@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./Contact.css"
 function Contact() {
   return (
-    <div
+    <div className="contactdiv"
       style={{
         backgroundImage: ' url("https://wallpapercave.com/wp/wp5942140.jpg")',
         backgroundSize: "cover",

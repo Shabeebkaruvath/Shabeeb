@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./Portfolio.css"
 function Portfolio() {
   return (
-    <div
+    <div className="portdiv"
       style={{
         backgroundImage: ' url("https://wallpapercave.com/wp/wp5942140.jpg")',
         backgroundSize: "cover",

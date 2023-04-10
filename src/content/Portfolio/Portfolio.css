@@ -1,0 +1,39 @@
+@media (max-width: 320px) {
+    .portdiv {
+      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
+      background-size: cover;
+      width: -webkit-fill-available;
+      height: 38em;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+    }
+     
+  }
+@media (max-width: 375px) {
+    .portdiv {
+      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
+      background-size: cover;
+      width: -webkit-fill-available;
+      height: 38em;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+    }
+     
+  }
+@media (max-width: 425px) {
+    .portdiv {
+      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
+      background-size: cover;
+      width: -webkit-fill-available;
+      height: 38em;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+    }
+     
+  }

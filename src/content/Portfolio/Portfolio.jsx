@@ -8,6 +8,7 @@ function Portfolio() {
         backgroundSize: "cover",
         color: "white",
         width: "-webkit-fill-available",
+        height: "100vh",
       }}
     >
       <h1>Portfolio</h1>

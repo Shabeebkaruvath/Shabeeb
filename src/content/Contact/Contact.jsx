@@ -8,6 +8,7 @@ function Contact() {
         backgroundSize: "cover",
         color: "white",
         width: "-webkit-fill-available",
+        height: "100vh",
       }}
     >
       <h1>Contact</h1>

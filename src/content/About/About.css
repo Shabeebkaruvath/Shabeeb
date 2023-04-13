@@ -11,11 +11,25 @@ p {
 }
 .Portabout {
   font-size: 20px;
-  padding: 13px;
-  border-radius: 17px;
-  background-color: #4e4e4e;
-  color: white;
-  border: none;
+    padding: 5px;
+    border-radius: 0px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-family: "Poppins";
+    width: 100px;
+    font-weight: 700;
+}
+.Portabout:hover{
+  font-size: 20px;
+    padding: 5px;
+    border-radius: 0px;
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+    font-family: "Poppins";
+    width: 100px;
+    font-weight: 700;
 }
 
 @media (max-width: 320px) {
@@ -39,6 +53,7 @@ p {
     letter-spacing: 1px;
     text-align: justify;
   }
+  
 }
 @media (max-width: 375px) {
   .aboutdiv {
@@ -66,7 +81,7 @@ p {
     background-image: url(./1.jpg);
     background-size: cover;
     width: -webkit-fill-available;
-    height: 200vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
 
@@ -80,5 +95,16 @@ p {
     font-family: "Poppins";
     letter-spacing: 1px;
     text-align: justify;
+  }
+  .Portabout {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 0px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-family: "Poppins";
+    width: 100px;
+    font-weight: 700;
   }
 }

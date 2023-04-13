@@ -12,6 +12,7 @@ function About() {
         backgroundImage: ' url("https://wallpapercave.com/wp/wp5942140.jpg")',
         width: "-webkit-fill-available",
         backgroundSize: "cover",
+        alignItems:"center"
       }}
       className="aboutdiv"
     >

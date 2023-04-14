@@ -40,6 +40,7 @@ function App() {
           <Route path="Shabeeb/blog" element={<Blog />} />
           <Route path="Shabeeb/portfolio" element={<Portfolio />} />
           <Route path="Shabeeb/contact" element={<Contact />} />
+          <Route path="*" element={<Home/>} />
         </Routes>
       </Router>
     </div>

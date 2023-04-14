@@ -1,5 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom"
+import me from "./me.jpg"
 import "./About.css";
 function About() {
     let nav=useNavigate();
@@ -8,16 +9,13 @@ function About() {
     }
   return (
     <div
-      style={{
-        backgroundImage: ' url("https://wallpapercave.com/wp/wp5942140.jpg")',
-        width: "-webkit-fill-available",
-        backgroundSize: "cover",
-        alignItems:"center"
-      }}
+      
       className="aboutdiv"
     >
       <h1>About</h1>
+      <img src={me} alt=""  className="my-img"/>
       <p>
+        
         Hello! My name is Shabeeb, and I'm an experienced ReactJS developer with
         2 years of hands-on experience in building modern and scalable web
         applications. I'm passionate about creating interactive user interfaces

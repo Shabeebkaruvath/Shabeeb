@@ -6,67 +6,70 @@ p {
   letter-spacing: 1px;
   text-align: start;
 }
-
-@media (max-width: 320px)  {
-    .portdiv {
-      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-      background-size: cover;
-      width: -webkit-fill-available;
-      height: 150vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-    }
-    p {
-      color: white;
-      font-size: 12px;
-      padding: 50px;
-      font-family: "Poppins";
-      letter-spacing: 1px;
-      text-align: justify;
-    }
-     
+.portdiv {
+  background-color: #000;
+  background-size: cover;
+  color: white;
+  width: -webkit-fill-available;
+  height: 250vh;
+}
+@media (120px <= width <= 320px) {
+  .portdiv {
+    background-image: url("./1.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 250vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
   }
-@media (max-width: 375px)  {
-    .portdiv {
-      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-      background-size: cover;
-      width: -webkit-fill-available;
-      height: 150vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-    }
-    p {
-      color: white;
-      font-size: 12px;
-      padding: 50px;
-      font-family: "Poppins";
-      letter-spacing: 1px;
-      text-align: justify;
-    }
-     
+  p {
+    color: white;
+    font-size: 12px;
+    padding: 50px;
+    font-family: "Poppins";
+    letter-spacing: 1px;
+    text-align: start;
   }
-@media (max-width: 425px)  {
-    .portdiv {
-      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-      background-size: cover;
-      width: -webkit-fill-available;
-      height: 150vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-    }
-    p {
-      color: white;
-      font-size: 12px;
-      padding: 50px;
-      font-family: "Poppins";
-      letter-spacing: 1px;
-      text-align: justify;
-    }
-     
+}
+@media (321px <= width <= 375px) {
+  .portdiv {
+    background-image: url("./1.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 250vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
   }
+  p {
+    color: white;
+    font-size: 12px;
+    padding: 0px 50px;
+    font-family: "Poppins";
+    letter-spacing: 1px;
+    text-align: start;
+  }
+}
+@media (376px <= width <= 425px) {
+  .portdiv {
+    background-image: url("./1.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 250vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+  }
+  p {
+    color: white;
+    font-size: 12px;
+    padding: 50px;
+    font-family: "Poppins";
+    letter-spacing: 1px;
+    text-align: start;
+  }
+}

@@ -4,11 +4,7 @@ function Portfolio() {
   return (
     <div className="portdiv"
       style={{
-        backgroundImage: ' url("https://wallpapercave.com/wp/wp5942140.jpg")',
-        backgroundSize: "cover",
-        color: "white",
-        width: "-webkit-fill-available",
-        height: "150vh",
+        
       }}
     >
       <h1>Portfolio</h1>

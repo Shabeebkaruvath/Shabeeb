@@ -1,39 +1,172 @@
-@media (max-width: 320px)  {
-    .contactdiv {
-      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-      background-size: cover;
-      width: -webkit-fill-available;
-      height: 150vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-    }
-    
+.contactdiv {
+  background-color: black;
+  background-size: cover;
+  color: white;
+  width: -webkit-fill-available;
+  height: 150vh;
+}
+label {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.contactform {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+}
+.formtop {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+.formbottom {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.inname {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 50%;
+  margin-bottom: 10px;
+}
+.inmail {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 50%;
+  margin-bottom: 10px;
+}
+.inmail input[type="text"] {
+  width: 100%;
+}
+.contactform input {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+  padding: 10px;
+  color: rgb(255, 0, 0);
+  font-weight: 900;
+}
+
+textarea {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+  padding: 10px;
+  color: rgb(255, 0, 0);
+}
+.textarea {
+  margin-top: 25px;
+}
+.submit {
+  margin-top: 5px;
+}
+.submit:hover {
+  margin-top: 5px;
+  color: black;
+  background-color: white;
+  border-radius: 0px;
+  width: 70px;
+}
+.social {
+  margin-top: 30px;
+}
+.social1 img {
+  cursor: pointer;
+}
+@media (120px <= width <= 320px) {
+  .contactdiv {
+    background-image: url("./1.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
   }
-  @media (max-width: 375px) {
-    .contactdiv {
-      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-      background-size: cover;
-      width: -webkit-fill-available;
-      height: 150vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-    }
-    
+  .formtop {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
   }
-  @media (max-width: 425px)  {
-    .contactdiv {
-      background-image: url("https://wallpapercave.com/wp/wp5942140.jpg");
-      background-size: cover;
-      width: -webkit-fill-available;
-      height: 150vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-    }
-    
+  .inname {
+    width: 100%;
   }
+  .inmail {
+    width: 100%;
+  }
+  .social {
+    margin-top: 30px;
+  }
+}
+@media (321px <= width <= 375px) {
+  .contactdiv {
+    background-image: url("./1.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+  }
+  .formtop {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .inname {
+    width: 100%;
+  }
+  .inmail {
+    width: 100%;
+  }
+  .social {
+    margin-top: 30px;
+  }
+}
+@media (376px <= width <= 425px) {
+  .contactdiv {
+    background-image: url("./1.jpg");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+  }
+  .formtop {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .inname {
+    width: 100%;
+  }
+  .inmail {
+    width: 100%;
+  }
+  .social {
+    margin-top: 30px;
+  }
+}

@@ -81,7 +81,7 @@ p {
     background-image: url(./1.jpg);
     background-size: cover;
     width: -webkit-fill-available;
-    height: 200vh;
+    height: 230vh;
     display: flex;
     flex-direction: column;
 
@@ -107,7 +107,7 @@ p {
     background-image: url(./1.jpg);
     background-size: cover;
     width: -webkit-fill-available;
-    height: 150vh;
+    height: 210vh;
     display: flex;
     flex-direction: column;
 

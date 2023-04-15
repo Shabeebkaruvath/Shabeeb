@@ -23,6 +23,7 @@
   flex-direction: column;
   width: 15%;
   border-right: 1px solid rgb(226, 226, 226);
+  left: 0;
 }
 .home {
   text-align: center;

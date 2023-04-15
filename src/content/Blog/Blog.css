@@ -3,23 +3,23 @@
   background-size: cover;
   color: white;
   width: -webkit-fill-available;
-  height: 150vh;
+  height: 180vh;
 }
 .image-blog {
   width: 50%;
 }
 .blog-data {
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0px 50px;
   font-family: "Poppins";
   letter-spacing: 1px;
   text-align: start;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .blog-datah {
   color: white;
-  font-size: 16px;
+  font-size: 22px;
   padding: 0px 50px;
   font-family: "Poppins";
   letter-spacing: 1px;
@@ -60,7 +60,7 @@
     background-image: url("./1.jpg");
     background-size: cover;
     width: -webkit-fill-available;
-    height: 250vh;
+    height: 220vh;
     display: flex;
     flex-direction: column;
 
@@ -86,7 +86,7 @@
     background-image: url("./1.jpg");
     background-size: cover;
     width: -webkit-fill-available;
-    height: 250vh;
+    height: 170vh;
     display: flex;
     flex-direction: column;
 

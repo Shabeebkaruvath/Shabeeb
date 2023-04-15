@@ -3,7 +3,7 @@
   background-size: cover;
   color: white;
   width: -webkit-fill-available;
-  height: 150vh;
+  height: 130vh;
 }
 label {
   font-weight: 900;
@@ -115,7 +115,7 @@ textarea {
     background-image: url("./1.jpg");
     background-size: cover;
     width: -webkit-fill-available;
-    height: 150vh;
+    height: 135vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -145,7 +145,7 @@ textarea {
     background-image: url("./1.jpg");
     background-size: cover;
     width: -webkit-fill-available;
-    height: 150vh;
+    height: 115vh;
     display: flex;
     flex-direction: column;
     text-align: center;

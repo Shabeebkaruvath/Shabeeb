@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/Shabeeb/static/css/main.0ae8e699.css",
-    "main.js": "/Shabeeb/static/js/main.e9606955.js",
-    "static/media/netflix-clone.png": "/Shabeeb/static/media/netflix-clone.8badc2d64f77f9bd8534.png",
-    "static/media/me.jpg": "/Shabeeb/static/media/me.fae7811d08c8ea0ddc78.jpg",
+    "main.css": "/Shabeeb/static/css/main.c987d0f4.css",
+    "main.js": "/Shabeeb/static/js/main.8ba76a23.js",
+    "static/media/netflix-clone.png": "/Shabeeb/static/media/netflix-clone.7f8008eaaae29ff1231d.png",
+    "static/media/E-commerce.png": "/Shabeeb/static/media/E-commerce.59b7ce02b6b1fde84c77.png",
+    "static/media/weather.png": "/Shabeeb/static/media/weather.57f9da4f9571777b39a5.png",
+    "static/media/me.jpg": "/Shabeeb/static/media/me.ea6c52b7067a49122420.jpg",
     "static/media/1.jpg": "/Shabeeb/static/media/1.eb3b6ae870fa660ccd16.jpg",
     "index.html": "/Shabeeb/index.html",
-    "main.0ae8e699.css.map": "/Shabeeb/static/css/main.0ae8e699.css.map",
-    "main.e9606955.js.map": "/Shabeeb/static/js/main.e9606955.js.map"
+    "main.c987d0f4.css.map": "/Shabeeb/static/css/main.c987d0f4.css.map",
+    "main.8ba76a23.js.map": "/Shabeeb/static/js/main.8ba76a23.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ae8e699.css",
-    "static/js/main.e9606955.js"
+    "static/css/main.c987d0f4.css",
+    "static/js/main.8ba76a23.js"
   ]
 }

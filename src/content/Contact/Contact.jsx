@@ -11,20 +11,20 @@ function Contact() {
         <div className="formtop">
           <div className="inname">
             <label htmlFor="">name</label>
-            <input type="text" />
+            <input type="text" name="name" required/>
           </div>
           <div className="inmail">
             <label htmlFor="">email</label>
-            <input type="email" />
+            <input type="email" name="mail" required/>
           </div>
         </div>
         <div className="formbottom">
           <label htmlFor="">subject</label>
-          <input type="text" />
+          <input type="text" name="subject" required/>
           <label htmlFor="" className="textarea">
             message
           </label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <textarea name="" id="" cols="30" rows="10" gname="message" required></textarea>
         </div>
         <input type="submit" value="submit" className="submit" />
       </form >

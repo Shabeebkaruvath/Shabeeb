@@ -7,7 +7,7 @@ function Contact() {
   return (
     <div className="contactdiv" style={{}}>
       <h1>Contact</h1>
-      <form action="" className="contactform">
+      <form action="https://formsubmit.co/shabeebkaruvath@gmail.com" method="POST" className="contactform" >
         <div className="formtop">
           <div className="inname">
             <label htmlFor="">name</label>
@@ -26,8 +26,8 @@ function Contact() {
           </label>
           <textarea name="" id="" cols="30" rows="10"></textarea>
         </div>
-        <input type="button" value="submit" className="submit" />
-      </form>
+        <input type="submit" value="submit" className="submit" />
+      </form >
       <div className="social">
         <h3>Follow me on</h3>
         <div className="social1">

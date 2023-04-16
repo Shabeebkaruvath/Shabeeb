@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/Shabeeb/static/css/main.9d348aa3.css",
-    "main.js": "/Shabeeb/static/js/main.b9bc9dcd.js",
+    "main.css": "/Shabeeb/static/css/main.0ae8e699.css",
+    "main.js": "/Shabeeb/static/js/main.e9606955.js",
+    "static/media/netflix-clone.png": "/Shabeeb/static/media/netflix-clone.8badc2d64f77f9bd8534.png",
     "static/media/me.jpg": "/Shabeeb/static/media/me.fae7811d08c8ea0ddc78.jpg",
     "static/media/1.jpg": "/Shabeeb/static/media/1.eb3b6ae870fa660ccd16.jpg",
     "index.html": "/Shabeeb/index.html",
-    "main.9d348aa3.css.map": "/Shabeeb/static/css/main.9d348aa3.css.map",
-    "main.b9bc9dcd.js.map": "/Shabeeb/static/js/main.b9bc9dcd.js.map"
+    "main.0ae8e699.css.map": "/Shabeeb/static/css/main.0ae8e699.css.map",
+    "main.e9606955.js.map": "/Shabeeb/static/js/main.e9606955.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d348aa3.css",
-    "static/js/main.b9bc9dcd.js"
+    "static/css/main.0ae8e699.css",
+    "static/js/main.e9606955.js"
   ]
 }

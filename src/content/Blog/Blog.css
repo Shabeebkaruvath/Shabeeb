@@ -15,7 +15,7 @@
   font-family: "Poppins";
   letter-spacing: 1px;
   text-align: start;
-  text-transform: lowercase;
+  text-transform: math-auto;
 }
 .blog-datah {
   color: white;
@@ -52,7 +52,7 @@
     font-family: "Poppins";
     letter-spacing: 1px;
     text-align: start;
-    text-transform: uppercase;
+    text-transform: math-auto;
   }
 }
 @media (321px <= width <= 375px) {
@@ -78,7 +78,7 @@
     font-family: "Poppins";
     letter-spacing: 1px;
     text-align: start;
-    text-transform: uppercase;
+    text-transform: math-auto;
   }
 }
 @media (376px <= width <= 425px) {
@@ -104,6 +104,6 @@
     font-family: "Poppins";
     letter-spacing: 1px;
     text-align: start;
-    text-transform: uppercase;
+    text-transform: math-auto;
   }
 }

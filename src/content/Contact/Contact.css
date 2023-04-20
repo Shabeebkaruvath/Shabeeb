@@ -50,7 +50,7 @@ label {
   border: 1px solid white;
   border-radius: 0px;
   padding: 10px;
-  color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 900;
 }
 
@@ -59,13 +59,14 @@ textarea {
   border: 1px solid white;
   border-radius: 0px;
   padding: 10px;
-  color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
 }
 .textarea {
   margin-top: 25px;
 }
 .submit {
   margin-top: 5px;
+  cursor: pointer;
 }
 .submit:hover {
   margin-top: 5px;
@@ -73,6 +74,7 @@ textarea {
   background-color: white;
   border-radius: 0px;
   width: 70px;
+  cursor: pointer;
 }
 .social {
   margin-top: 30px;

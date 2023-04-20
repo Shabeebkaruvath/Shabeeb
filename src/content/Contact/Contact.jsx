@@ -26,7 +26,7 @@ function Contact() {
           </label>
           <textarea name="" id="" cols="30" rows="10" gname="message" required></textarea>
         </div>
-        <input type="submit" value="submit" className="submit" />
+        <input type="submit" value="Submit" className="submit" />
       </form >
       <div className="social">
         <h3>Follow me on</h3>

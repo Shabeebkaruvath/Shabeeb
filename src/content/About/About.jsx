@@ -26,7 +26,7 @@ function About() {
               </a>
             </li>
             <li>Email : shabeebkaruvath@gmail.com</li>
-            <li>Freelansce : Available</li>
+            <li>Freelance : Available</li>
             <li>Skills : Reactjs, Javascript, JSX, HTML, CSS</li>
           </ol>
         </div>

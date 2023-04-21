@@ -3,6 +3,7 @@ import "./Portfolio.css";
 import netflix from "./netflix-clone.png";
 import pepper from "./E-commerce.png";
 import weather from "./weather.png";
+import weathereact from "./React-weather.png";
 function Portfolio() {
   return (
     <div className="portdiv" style={{}}>
@@ -17,6 +18,17 @@ function Portfolio() {
             Netflix clone by Reactjs and Movie Data from TMDB API
           </p>
         </div>
+
+        <div className="port1">
+          <a href="https://shabeebkaruvath.github.io/Reactjs-Weather-app-/">
+            <img src={weathereact} alt="Weather" />
+          </a>
+          <h2 className="port1h">Reactjs Weather app</h2>
+          <p className="port1p">
+           Weather app made by Reactjs and Weather Data from openweathermap API
+          </p>
+        </div>
+
         <div className="port2">
           <a href="https://shabeebkaruvath.github.io/E-Commerce-Wesite/">
             <img src={pepper} alt="e-commerce" />

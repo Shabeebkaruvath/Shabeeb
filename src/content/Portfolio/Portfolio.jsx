@@ -20,7 +20,7 @@ function Portfolio() {
         </div>
 
         <div className="port1">
-          <a href="https://shabeebkaruvath.github.io/Reactjs-Weather-app-/">
+          <a href="https://shabeebkaruvath.github.io/1/">
             <img src={weathereact} alt="Weather" />
           </a>
           <h2 className="port1h">Reactjs Weather app</h2>

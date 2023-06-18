@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Shabeeb/static/css/main.f4cc4d97.css",
+    "main.css": "/Shabeeb/static/css/main.cc0651de.css",
     "main.js": "/Shabeeb/static/js/main.45d2a7b5.js",
     "static/media/React-weather.png": "/Shabeeb/static/media/React-weather.28ee9138d55890931bd5.png",
     "static/media/netflix-clone.png": "/Shabeeb/static/media/netflix-clone.7f8008eaaae29ff1231d.png",
@@ -9,11 +9,11 @@
     "static/media/me.jpg": "/Shabeeb/static/media/me.ea6c52b7067a49122420.jpg",
     "static/media/1.jpg": "/Shabeeb/static/media/1.eb3b6ae870fa660ccd16.jpg",
     "index.html": "/Shabeeb/index.html",
-    "main.f4cc4d97.css.map": "/Shabeeb/static/css/main.f4cc4d97.css.map",
+    "main.cc0651de.css.map": "/Shabeeb/static/css/main.cc0651de.css.map",
     "main.45d2a7b5.js.map": "/Shabeeb/static/js/main.45d2a7b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4cc4d97.css",
+    "static/css/main.cc0651de.css",
     "static/js/main.45d2a7b5.js"
   ]
 }

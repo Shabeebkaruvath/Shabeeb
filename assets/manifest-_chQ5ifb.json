@@ -1,7 +1,7 @@
 {
     "name": "Shabeeb",
     "short_name": "Shabeeb",
-    "start_url": "/",
+    "start_url": "/Shabeeb/",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#ffffff",

@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'Weather App',
     image: '/images/weather-app.png',
-    github: 'https://github.com/shabeebdev/weather-app',
+    github: 'https://github.com/Shabeebkaruvath/Reactjs-Weather-app-',
     description: 'A responsive weather application that provides real-time forecasts, hourly updates, and extended predictions using data from reliable meteorological APIs.'
   },
 ];

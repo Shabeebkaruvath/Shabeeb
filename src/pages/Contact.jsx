@@ -8,7 +8,7 @@ const Contact = () => {
       <div className="max-w-2xl mx-auto border border-black p-8 rounded-2xl shadow-sm">
         <h1 className="text-3xl font-bold mb-6 text-center">Contact Me</h1>
         <form
-          action="https://formspree.io/f/your-form-id" // Replace with your Formspree or backend handler
+          action="https://formspree.io/f/mzzaqrvp" 
           method="POST"
           className="space-y-6"
         >

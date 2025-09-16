@@ -1,6 +1,6 @@
 import React from 'react';
 // Import the image directly
-import profileImage from '../assets/me.png';
+import profileImage from '../assets/image1.png';
 
 const HomePage = () => {
   return (
@@ -19,7 +19,7 @@ const HomePage = () => {
           <img
             src={profileImage} 
             alt="Shabeeb"
-            className="w-64 h-64 object-cover rounded border-4 border-black"
+            className="w-64 h-64 object-cover rounded "
             onError={(e) => {
               console.error("Image failed to load");
               // Fall back to a colored div if image fails

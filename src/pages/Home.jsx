@@ -12,8 +12,7 @@ const HomePage = () => {
             Hey there.<br />I'm <span className="text-black">Shabeeb</span>.
           </h2>
           <p className="text-lg leading-relaxed text-gray-700 max-w-xl">
-            Hello! My name is Shabeeb, and I'm an experienced ReactJS developer with 2 years of hands-on experience in building modern and scalable web applications. I'm passionate about creating interactive user interfaces and delivering exceptional user experiences through my code.
-          </p>
+           "I’m Shabeeb—a BCA graduate and current M.Sc. student specializing in Machine Learning. By night, I'm a ReactJS developer with 2 years of experience building clean, high-performance web applications. Currently, I'm bridging the gap between front-end development and Neural Networks </p>
         </div>
         <div className="flex justify-center">
           <img

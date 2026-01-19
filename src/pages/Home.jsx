@@ -19,7 +19,7 @@ const HomePage = () => {
           <img
             src={profileImage} 
             alt="Shabeeb"
-            className="w-64 h-64 object-cover rounded "
+            className="w-72 h-72 object-cover rounded-2xl border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all "
             onError={(e) => {
               console.error("Image failed to load");
               // Fall back to a colored div if image fails

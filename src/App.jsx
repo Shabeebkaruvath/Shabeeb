@@ -19,7 +19,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Shabeeb">
       <ScrollToTop />
       <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#fafaf8', color: '#0a0a0a' }}>
         <Navbar />

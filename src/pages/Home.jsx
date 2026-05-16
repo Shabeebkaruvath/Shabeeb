@@ -1,38 +1,152 @@
-import React from 'react';
-// Import the image directly
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import profileImage from '../assets/image1.png';
 
-const HomePage = () => {
+export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-black font-sans px-6 py-10 flex flex-col items-center justify-center">
-      {/* Hero Section */}
-      <section className="grid md:grid-cols-2 gap-10 max-w-6xl w-full items-center">
-        <div>
-          <h2 className="text-5xl font-black mb-6 leading-tight">
-            Hey there.<br />I'm <span className="text-black">Shabeeb</span>.
-          </h2>
-          <p className="text-lg leading-relaxed text-gray-700 max-w-xl">
-           "I’m Shabeeb—a BCA graduate and current M.Sc. student specializing in Machine Learning. By night, I'm a ReactJS developer with 2 years of experience building clean, high-performance web applications. Currently, I'm bridging the gap between front-end development and Neural Networks </p>
-        </div>
-        <div className="flex justify-center">
-          <img
-            src={profileImage} 
-            alt="Shabeeb"
-            className="w-72 h-72 object-cover rounded-2xl border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all "
-            onError={(e) => {
-              console.error("Image failed to load");
-              // Fall back to a colored div if image fails
-              e.target.style.display = 'none';
-              const fallbackDiv = document.createElement('div');
-              fallbackDiv.className = 'w-64 h-64 bg-gray-300 rounded border-4 border-black flex items-center justify-center text-xl font-bold';
-              fallbackDiv.innerText = 'SH';
-              e.target.parentNode.appendChild(fallbackDiv);
-            }}
-          />
-        </div>
-      </section>
-    </main>
-  );
-};
+    <section className="min-h-[calc(100vh-80px)] flex items-center">
+      <div className="max-w-5xl mx-auto w-full px-8 py-20 md:py-32">
 
-export default HomePage;
+        {/* Tag line */}
+        <div className="fade-up mb-6 flex items-center gap-3">
+          <span style={{
+            display: 'inline-block', width: 32, height: 1,
+            background: '#0a0a0a'
+          }} />
+          <span style={{ fontSize: '12px', letterSpacing: '0.12em', color: '#6b6b6b', fontWeight: 500 }}>
+            REACT · ML · DESIGN
+          </span>
+        </div>
+
+        {/* Main grid */}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+
+          {/* Text */}
+          <div>
+            <h1
+              className="fade-up fade-up-delay-1"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(3rem, 6vw, 4.5rem)',
+                lineHeight: 1.08,
+                fontWeight: 400,
+                marginBottom: '1.5rem',
+              }}
+            >
+              Hey, I'm<br />
+              <em style={{ fontStyle: 'italic' }}>Shabeeb.</em>
+            </h1>
+
+            <p
+              className="fade-up fade-up-delay-2"
+              style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#4a4a4a', maxWidth: '42ch', marginBottom: '2.5rem' }}
+            >
+              A ReactJS developer with 2+ years of experience crafting clean, 
+              high-performance web apps — and a M.Sc. student bridging front-end 
+              engineering with Neural Networks.
+            </p>
+
+            <div className="fade-up fade-up-delay-3 flex flex-wrap gap-4">
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2 group"
+                style={{
+                  padding: '12px 24px',
+                  background: '#0a0a0a',
+                  color: '#fafaf8',
+                  borderRadius: '4px',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  letterSpacing: '0.02em',
+                  transition: 'opacity 0.2s',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.opacity = 0.85)}
+                onMouseLeave={e => (e.currentTarget.style.opacity = 1)}
+              >
+                View work
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 link-hover"
+                style={{
+                  padding: '12px 24px',
+                  border: '1px solid #e0ddd6',
+                  borderRadius: '4px',
+                  fontSize: '14px',
+                  color: '#4a4a4a',
+                  fontWeight: 400,
+                  transition: 'border-color 0.2s',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = '#0a0a0a')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = '#e0ddd6')}
+              >
+                Get in touch
+              </Link>
+            </div>
+          </div>
+
+          {/* Image */}
+          <div className="fade-up fade-up-delay-4 flex justify-center md:justify-end">
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+              {/* Offset frame */}
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                transform: 'translate(12px, 12px)',
+                border: '1px solid #e0ddd6',
+                borderRadius: '12px',
+                zIndex: 0,
+              }} />
+              <img
+                src={profileImage}
+                alt="Shabeeb"
+                style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  width: 280,
+                  height: 320,
+                  objectFit: 'cover',
+                  borderRadius: '12px',
+                  border: '1px solid #e0ddd6',
+                  display: 'block',
+                }}
+                onError={e => {
+                  e.target.style.display = 'none';
+                  const fb = document.createElement('div');
+                  fb.style.cssText = 'width:280px;height:320px;background:#f0ede8;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:2rem;color:#6b6b6b;position:relative;z-index:1';
+                  fb.textContent = 'SH';
+                  e.target.parentNode.appendChild(fb);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Stat bar */}
+        <div
+          className="fade-up fade-up-delay-4 mt-20 grid grid-cols-3 gap-8"
+          style={{ borderTop: '1px solid #e0ddd6', paddingTop: '2rem' }}
+        >
+          {[
+            { num: '2+',    label: 'Years experience' },
+            { num: '3',     label: 'Projects shipped'  },
+            { num: 'M.Sc.', label: 'Machine Learning'  },
+          ].map(({ num, label }) => (
+            <div key={label}>
+              <p style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '1.8rem',
+                fontWeight: 400,
+                marginBottom: '4px',
+              }}>{num}</p>
+              <p style={{ fontSize: '12px', color: '#9b9b9b', letterSpacing: '0.04em' }}>{label}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}

@@ -1,25 +1,37 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
-import Home from './pages/Home';
-import About from './pages/About';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Contact from './pages/Contact';
+import Home from './pages/Home';
+import About from './pages/About';
 import Project from './pages/Project';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+
+// Scroll to top on every route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white text-black font-sans pb-20">
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#fafaf8', color: '#0a0a0a' }}>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Project />} />
-          <Route path="/contact" element={<Contact />} />
-          
-        </Routes>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/"         element={<Home />} />
+            <Route path="/about"    element={<About />} />
+            <Route path="/projects" element={<Project />} />
+            <Route path="/contact"  element={<Contact />} />
+            <Route path="*"         element={<NotFound />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
     </Router>

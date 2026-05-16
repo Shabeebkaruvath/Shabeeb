@@ -13,13 +13,15 @@ import NotFound from './pages/NotFound';
 // Scroll to top on every route change
 function ScrollToTop() {
   const { pathname } = useLocation();
+  
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
 }
-
+const basename = import.meta.env.BASE_URL === '/Shabeeb/' ? '/Shabeeb' : '/';
 function App() {
   return (
-    <Router basename="/Shabeeb">
+    
+    <Router basename={basename}>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#fafaf8', color: '#0a0a0a' }}>
         <Navbar />

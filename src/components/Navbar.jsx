@@ -1,93 +1,203 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { HomeIcon, User, Layers, Mail, SquareCode } from 'lucide-react';
+import { NavLink, useLocation } from 'react-router-dom';
+
+const mono = { fontFamily: '"SF Mono","Fira Mono","Roboto Mono",ui-monospace,monospace' };
 
 const links = [
-  { to: '/',         label: 'Home',     Icon: HomeIcon },
-  { to: '/about',    label: 'About',    Icon: User     },
-  { to: '/projects', label: 'Projects', Icon: Layers   },
-  { to: '/contact',  label: 'Contact',  Icon: Mail     },
+  { to: '/',         code: '01', label: 'HOME'     },
+  { to: '/about',    code: '02', label: 'ABOUT'    },
+  { to: '/projects', code: '03', label: 'PROJECTS' },
+  { to: '/contact',  code: '04', label: 'CONTACT'  },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // derive active label for status display
+  const active = links.find(l =>
+    l.to === '/' ? location.pathname === '/' : location.pathname.startsWith(l.to)
+  );
+
   return (
     <>
-      {/* ── Desktop top bar ── */}
+      {/* ── RESPONSIVE STYLES ── */}
+      <style>
+        {`
+          .desktop-nav {
+            display: block;
+          }
+          .mobile-nav {
+            display: none;
+          }
+
+          /* Tablet & Mobile Layout */
+          @media (max-width: 768px) {
+            .desktop-nav {
+              display: none !important;
+            }
+            .mobile-nav {
+              display: flex !important;
+            }
+          }
+        `}
+      </style>
+
+      {/* ── DESKTOP ── */}
       <header
-        className="hidden md:flex sticky top-0 z-50 w-full transition-all duration-300"
+        className="desktop-nav"
         style={{
-          backgroundColor: scrolled ? 'rgba(250,250,248,0.92)' : 'transparent',
+          ...mono,
+          position: 'sticky',
+          top: 0,
+          zIndex: 50,
+          width: '100%',
+          backgroundColor: scrolled ? 'rgba(250,250,248,0.96)' : '#fafaf8',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          borderBottom: scrolled ? '1px solid #e0ddd6' : '1px solid transparent',
+          WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+          borderBottom: '1px solid #0a0a0a',
+          transition: 'background 0.2s',
         }}
       >
-        <div className="max-w-5xl mx-auto w-full px-8 py-5 flex items-center justify-between">
+        <div style={{
+          maxWidth: '960px',
+          margin: '0 auto',
+          padding: '0 32px',
+          display: 'flex',
+          alignItems: 'stretch',
+          height: '44px',
+        }}>
+
+          {/* Logo cell */}
           <NavLink
             to="/"
-            className="flex items-center gap-2 group"
-            style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem' }}
+            style={{
+              ...mono,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              borderRight: '1px solid #0a0a0a',
+              paddingRight: '20px',
+              marginRight: '0',
+              textDecoration: 'none',
+              color: '#0a0a0a',
+              flexShrink: 0,
+            }}
           >
-            <SquareCode
-              size={18}
-              strokeWidth={1.5}
-              style={{ transition: 'transform 0.3s' }}
-              className="group-hover:rotate-12"
-            />
-            <span>Shabeeb</span>
+            <span style={{ fontSize: '9px', letterSpacing: '0.15em', color: '#9b9b9b' }}>SYS</span>
+            <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em' }}>SK-001</span>
           </NavLink>
 
-          <nav className="flex items-center gap-8">
-            {links.map(({ to, label }) => (
+          {/* Nav links */}
+          <nav style={{ display: 'flex', alignItems: 'stretch', flex: 1 }}>
+            {links.map(({ to, code, label }) => (
               <NavLink
                 key={to}
                 to={to}
                 end={to === '/'}
-                className="link-hover text-sm tracking-wide"
                 style={({ isActive }) => ({
-                  color: isActive ? '#0a0a0a' : '#6b6b6b',
-                  fontWeight: isActive ? 500 : 400,
+                  ...mono,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '7px',
+                  padding: '0 18px',
+                  borderRight: '1px solid #e0ddd6',
+                  textDecoration: 'none',
+                  fontSize: '10px',
+                  letterSpacing: '0.15em',
+                  fontWeight: isActive ? 700 : 400,
+                  color: isActive ? '#fafaf8' : '#6b6b6b',
+                  backgroundColor: isActive ? '#0a0a0a' : 'transparent',
+                  transition: 'background 0.15s, color 0.15s',
                 })}
+                onMouseEnter={e => {
+                  if (!e.currentTarget.style.backgroundColor.includes('10,10,10')) {
+                    e.currentTarget.style.color = '#0a0a0a';
+                  }
+                }}
+                onMouseLeave={e => {
+                  if (!e.currentTarget.style.backgroundColor.includes('10,10,10')) {
+                    e.currentTarget.style.color = '#6b6b6b';
+                  }
+                }}
               >
+                <span style={{ fontSize: '8px', color: 'inherit', opacity: 0.5 }}>{code}</span>
                 {label}
               </NavLink>
             ))}
           </nav>
+
+          {/* Status cell */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            borderLeft: '1px solid #0a0a0a',
+            paddingLeft: '16px',
+            flexShrink: 0,
+          }}>
+            <span style={{ ...mono, fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b' }}>VIEW</span>
+            <span style={{ ...mono, fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: '#0a0a0a' }}>
+              {active?.label ?? 'HOME'}
+            </span>
+          </div>
         </div>
       </header>
 
-      {/* ── Mobile bottom bar ── */}
+      {/* ── MOBILE BOTTOM BAR ── */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
+        className="mobile-nav"
         style={{
-          backgroundColor: 'rgba(250,250,248,0.95)',
+          ...mono,
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          backgroundColor: 'rgba(250,250,248,0.97)',
           backdropFilter: 'blur(16px)',
-          borderTop: '1px solid #e0ddd6',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderTop: '1px solid #0a0a0a',
+          height: 'calc(52px + env(safe-area-inset-bottom))',
+          paddingBottom: 'env(safe-area-inset-bottom)', /* Prevents iOS home bar overlap */
         }}
       >
-        <div className="flex justify-around items-center py-2">
-          {links.map(({ to, label, Icon }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === '/'}
-              className="flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all"
-              style={({ isActive }) => ({
-                color: isActive ? '#0a0a0a' : '#9b9b9b',
-              })}
-            >
-              <Icon size={20} strokeWidth={isActive => isActive ? 2 : 1.5} />
-              <span style={{ fontSize: '10px', letterSpacing: '0.04em', fontWeight: 500 }}>{label}</span>
-            </NavLink>
-          ))}
-        </div>
+        {links.map(({ to, code, label }) => (
+          <NavLink
+            key={to}
+            to={to}
+            end={to === '/'}
+            style={({ isActive }) => ({
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '2px',
+              textDecoration: 'none',
+              borderRight: to === '/contact' ? 'none' : '1px solid #e0ddd6',
+              backgroundColor: isActive ? '#0a0a0a' : 'transparent',
+              transition: 'background 0.15s',
+            })}
+          >
+            {({ isActive }) => (
+              <>
+                <span style={{ ...mono, fontSize: '7px', letterSpacing: '0.12em', color: isActive ? 'rgba(250,250,248,0.5)' : '#c8c5be' }}>
+                  {code}
+                </span>
+                <span style={{ ...mono, fontSize: '9px', fontWeight: isActive ? 700 : 400, letterSpacing: '0.12em', color: isActive ? '#fafaf8' : '#6b6b6b' }}>
+                  {label}
+                </span>
+              </>
+            )}
+          </NavLink>
+        ))}
       </nav>
     </>
   );

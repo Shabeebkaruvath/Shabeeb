@@ -1,185 +1,358 @@
 import { FaGithub } from 'react-icons/fa';
-import { ArrowUpRight } from 'lucide-react';
+
+const mono = { fontFamily: '"SF Mono","Fira Mono","Roboto Mono",ui-monospace,monospace' };
 
 const projects = [
   {
-    num: '01',
-    title: 'Product Aggregator',
-    description: 'A platform that aggregates products from multiple sources, letting users compare prices and features before purchase decisions.',
-    tags: ['React', 'API Integration', 'UI/UX'],
+    id:     'PRJ-001',
+    status: 'SHIPPED',
+    title:  'PRODUCT_AGGREGATOR',
+    stack:  ['REACT', 'API_INTEGRATION', 'UI/UX'],
+    desc:   'Platform aggregating products from multiple sources. Users compare prices and features before purchase. Multi-source data pipeline with real-time sync.',
     github: 'https://github.com/Shabeebkaruvath/fproject',
-    image: 'https://github.com/user-attachments/assets/b5f83cd2-1666-4ba9-aa95-d54f165cd7c0',
-    placeholder: null,
+    image:  'https://github.com/user-attachments/assets/b5f83cd2-1666-4ba9-aa95-d54f165cd7c0',
+    year:   '2024',
   },
   {
-    num: '02',
-    title: 'CashFlow — Finance Tracker',
-    description: 'A personal finance app to track expenses, manage budgets, and visualise spending patterns with interactive charts.',
-    tags: ['React', 'Charts', 'State Management'],
+    id:     'PRJ-002',
+    status: 'SHIPPED',
+    title:  'CASHFLOW',
+    stack:  ['REACT', 'CHARTS', 'STATE_MGMT'],
+    desc:   'Personal finance tracker. Expense logging, budget management, and interactive spending visualisations. Full CRUD with persistent local state.',
     github: 'https://github.com/Shabeebkaruvath/CashFlow',
-    image: 'https://github.com/user-attachments/assets/d9dd56a9-bfbc-4904-ad35-fe90a49bede8',
-    placeholder: null,
+    image:  'https://github.com/user-attachments/assets/d9dd56a9-bfbc-4904-ad35-fe90a49bede8',
+    year:   '2024',
   },
-  
   {
-    num: '03',
-    title: 'Fuzzy Logic Spam Detector',
-    description: 'A rule-based spam classification system using fuzzy logic. Extracts 5 signal features — keyword score, uppercase ratio, exclamation density, digit ratio, URL score — then runs a skfuzzy inference engine to classify emails as SPAM or HAM with confidence scoring.',
-    tags: ['Python', 'Fuzzy Logic', 'ML', 'NLP'],
+    id:     'PRJ-003',
+    status: 'SHIPPED',
+    title:  'FUZZY_SPAM_DETECTOR',
+    stack:  ['PYTHON', 'FUZZY_LOGIC', 'ML', 'NLP'],
+    desc:   'Rule-based spam classifier using skfuzzy inference engine. Extracts 5 signal features: keyword score, uppercase ratio, exclamation density, digit ratio, URL score. Outputs SPAM/HAM with confidence.',
     github: 'https://github.com/Shabeebkaruvath/spam-mail-detection',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWkkTi_sxiEB0_tN_kHz2JAYNp_2jV_fk8hx7AGXmR&s',
-    placeholder: 'fuzzy logic · python',
+    image:  null,
+    year:   '2025',
   },
   {
-    num: '04',
-    title: 'Weather App',
-    description: 'A responsive weather application delivering real-time forecasts and hourly updates via meteorological APIs.',
-    tags: ['React', 'REST API', 'Responsive'],
+    id:     'PRJ-004',
+    status: 'SHIPPED',
+    title:  'WEATHER_APP',
+    stack:  ['REACT', 'REST_API', 'RESPONSIVE'],
+    desc:   'Real-time weather application with live forecasts and hourly updates. Consumes meteorological APIs. Fully responsive across all viewport sizes.',
     github: 'https://github.com/Shabeebkaruvath/Reactjs-Weather-app-',
-    image: "null",
-    placeholder: 'weather · react',
+    image:  null,
+    year:   '2022',
   },
 ];
 
-function ProjectCard({ project }) {
+function ProjectRow({ project, index }) {
   return (
-    <article
-      style={{
-        border: '1px solid #e0ddd6',
-        borderRadius: '8px',
-        overflow: 'hidden',
-        backgroundColor: '#fff',
-        transition: 'border-color 0.25s, transform 0.25s',
-        cursor: 'default',
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = '#0a0a0a';
-        e.currentTarget.style.transform = 'translateY(-3px)';
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = '#e0ddd6';
-        e.currentTarget.style.transform = 'translateY(0)';
-      }}
-    >
-      {/* Image / Placeholder */}
-      <div style={{ height: '180px', backgroundColor: '#f5f4f0', overflow: 'hidden' }}>
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        ) : (
-          <div style={{
-            width: '100%', height: '100%',
-            display: 'flex', flexDirection: 'column',
-            alignItems: 'center', justifyContent: 'center', gap: '8px',
-            backgroundColor: '#f0ede8',
-          }}>
-            <span style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '2.5rem',
-              fontWeight: 400,
-              color: '#d0cdc8',
-              lineHeight: 1,
-            }}>
-              {project.num}
-            </span>
-            {project.placeholder && (
-              <span style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '11px',
-                letterSpacing: '0.1em',
-                color: '#b0aba3',
-                fontWeight: 500,
-                textTransform: 'uppercase',
-              }}>
-                {project.placeholder}
-              </span>
-            )}
+    <div className="project-row" style={{
+      borderBottom: '1px solid #e0ddd6',
+    }}>
+
+      {/* Left meta column */}
+      <div className="project-meta" style={{
+        backgroundColor: index % 2 === 0 ? 'transparent' : '#fafaf8',
+      }}>
+        <div>
+          <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '3px' }}>ID</div>
+          <div style={{ ...mono, fontSize: '10px', fontWeight: 700, color: '#0a0a0a' }}>{project.id}</div>
+        </div>
+        <div>
+          <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '3px' }}>YR</div>
+          <div style={{ ...mono, fontSize: '10px', fontWeight: 700, color: '#0a0a0a' }}>{project.year}</div>
+        </div>
+        <div>
+          <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '3px' }}>STS</div>
+          <div style={{ ...mono, fontSize: '9px', fontWeight: 700, color: '#0a0a0a', letterSpacing: '0.05em' }}>
+            ● {project.status}
           </div>
-        )}
+        </div>
       </div>
 
-      {/* Content */}
-      <div style={{ padding: '1.25rem' }}>
-        <span style={{ fontSize: '11px', letterSpacing: '0.1em', color: '#9b9b9b', fontWeight: 500 }}>
-          {project.num}
-        </span>
-        <h3 style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: '1.3rem',
-          fontWeight: 400,
-          margin: '6px 0 10px',
-        }}>
-          {project.title}
-        </h3>
-        <p style={{ fontSize: '14px', lineHeight: 1.7, color: '#6b6b6b', marginBottom: '16px' }}>
-          {project.description}
-        </p>
+      {/* Right content column */}
+      <div className="project-body">
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-5">
-          {project.tags.map(tag => (
-            <span
-              key={tag}
-              style={{
-                padding: '3px 10px',
-                border: '1px solid #e0ddd6',
-                borderRadius: '2px',
-                fontSize: '11px',
-                color: '#6b6b6b',
-                letterSpacing: '0.04em',
-              }}
-            >
-              {tag}
-            </span>
-          ))}
+        {/* Main content */}
+        <div className="project-content-pad" style={{ padding: '20px 20px' }}>
+
+          {/* Title */}
+          <div style={{
+            ...mono,
+            fontSize: 'clamp(0.95rem, 2vw, 1.15rem)',
+            fontWeight: 700,
+            letterSpacing: '-0.02em',
+            color: '#0a0a0a',
+            marginBottom: '10px',
+          }}>
+            {project.title}
+          </div>
+
+          {/* Description */}
+          <div style={{
+            ...mono,
+            fontSize: '11px',
+            lineHeight: 1.85,
+            color: '#6b6b6b',
+            marginBottom: '14px',
+            maxWidth: '60ch',
+          }}>
+            {project.desc}
+          </div>
+
+          {/* Stack tags */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '16px' }}>
+            {project.stack.map(tag => (
+              <span key={tag} style={{
+                ...mono,
+                fontSize: '9px',
+                letterSpacing: '0.1em',
+                padding: '3px 9px',
+                border: '1px solid #0a0a0a',
+                color: '#0a0a0a',
+              }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* GitHub link */}
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              ...mono,
+              fontSize: '10px',
+              letterSpacing: '0.15em',
+              color: '#0a0a0a',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              borderBottom: '1px solid #0a0a0a',
+              paddingBottom: '1px',
+              fontWeight: 700,
+            }}
+          >
+            <FaGithub size={11} />
+            VIEW_SOURCE ↗
+          </a>
         </div>
 
-        {/* Link */}
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 link-hover"
-          style={{ fontSize: '13px', color: '#0a0a0a', fontWeight: 500 }}
-        >
-          <FaGithub size={14} />
-          View on GitHub
-          <ArrowUpRight size={13} />
-        </a>
+        {/* Image panel */}
+        <div className="project-image-container">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+          ) : (
+            <div style={{
+              width: '100%', height: '100%',
+              minHeight: '160px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '6px',
+              backgroundColor: '#f5f4f0',
+            }}>
+              <div style={{ ...mono, fontSize: '1.4rem', fontWeight: 700, color: '#d0cdc8' }}>
+                {project.id.split('-')[1]}
+              </div>
+              <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.12em', color: '#c8c5be' }}>
+                NO_IMG
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-    </article>
+    </div>
   );
 }
 
 export default function Projects() {
   return (
-    <section className="max-w-5xl mx-auto w-full px-8 py-20 md:py-28">
+    <>
+      {/* ── RESPONSIVE STYLES ── */}
+      <style>
+        {`
+          .projects-section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 32px 120px;
+          }
+          .list-header {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            border-bottom: 1px solid #0a0a0a;
+            background-color: #f5f4f0;
+          }
+          .project-row {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+          }
+          .project-meta {
+            border-right: 1px solid #e0ddd6;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+          .project-body {
+            display: grid;
+            grid-template-columns: 1fr auto;
+          }
+          .project-image-container {
+            width: 140px;
+            border-left: 1px solid #e0ddd6;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            min-height: 160px;
+          }
+          .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-left: 1px solid #0a0a0a;
+          }
+          .summary-item {
+            border-right: 1px solid #0a0a0a;
+            border-bottom: 1px solid #0a0a0a;
+            padding: 12px 16px;
+          }
 
-      <div className="mb-16 fade-up">
-        <span style={{ fontSize: '12px', letterSpacing: '0.12em', color: '#6b6b6b', fontWeight: 500 }}>
-          PROJECTS
-        </span>
-        <h2 style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-          fontWeight: 400,
-          marginTop: '0.75rem',
-          lineHeight: 1.1,
+          /* Tablet & Mobile Layout */
+          @media (max-width: 768px) {
+            .projects-section {
+              padding: 0 24px 80px;
+            }
+            .list-header {
+              display: none; /* Hide tabular header on small screens */
+            }
+            .project-row {
+              grid-template-columns: 1fr;
+            }
+            .project-meta {
+              flex-direction: row;
+              flex-wrap: wrap;
+              border-right: none;
+              border-bottom: 1px solid #e0ddd6;
+              padding: 12px 20px;
+              gap: 24px;
+            }
+            .project-body {
+              grid-template-columns: 1fr;
+            }
+            .project-image-container {
+              width: 100%;
+              height: 240px;
+              border-left: none;
+              border-top: 1px solid #e0ddd6;
+            }
+            .summary-grid {
+              grid-template-columns: 1fr;
+              border-right: 1px solid #0a0a0a;
+            }
+            .summary-item {
+              border-right: none;
+            }
+          }
+
+          /* Small Mobile Adjustments */
+          @media (max-width: 480px) {
+            .projects-section {
+              padding: 0 16px 60px;
+            }
+            .project-meta {
+              gap: 16px;
+              padding: 12px 16px;
+            }
+            .project-content-pad {
+              padding: 20px 16px !important;
+            }
+            .project-image-container {
+              height: 200px;
+            }
+          }
+        `}
+      </style>
+
+      <section className="projects-section">
+
+        {/* Top label bar */}
+        <div style={{
+          ...mono,
+          borderBottom: '1px solid #0a0a0a',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '8px 0',
+          flexWrap: 'wrap',
+          gap: '6px',
         }}>
-          Things I've<br />
-          <em style={{ fontStyle: 'italic' }}>shipped.</em>
-        </h2>
-      </div>
+          <span style={{ fontSize: '9px', letterSpacing: '0.2em', color: '#9b9b9b' }}>
+            DOC·PROJECTS / REV.2
+          </span>
+          <span style={{ fontSize: '9px', letterSpacing: '0.2em', color: '#9b9b9b' }}>
+            UNITS: {projects.length} / STATUS: ALL_SHIPPED
+          </span>
+        </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 fade-up fade-up-delay-1">
-        {projects.map(project => (
-          <ProjectCard key={project.num} project={project} />
-        ))}
-      </div>
+        {/* Column headers */}
+        <div className="list-header">
+          <div style={{ ...mono, fontSize: '9px', letterSpacing: '0.15em', color: '#9b9b9b', padding: '8px 16px', borderRight: '1px solid #0a0a0a' }}>
+            META
+          </div>
+          <div style={{ ...mono, fontSize: '9px', letterSpacing: '0.15em', color: '#9b9b9b', padding: '8px 20px' }}>
+            PROJECT_DATA
+          </div>
+        </div>
 
-    </section>
+        {/* Project rows */}
+        <div style={{ borderTop: '1px solid #0a0a0a' }}>
+          {projects.map((project, i) => (
+            <ProjectRow key={project.id} project={project} index={i} />
+          ))}
+        </div>
+
+        {/* Summary bar */}
+        <div className="summary-grid" style={{
+          ...mono,
+          borderTop: '1px solid #0a0a0a',
+        }}>
+          {[
+            { k: 'TOTAL_PRJ',  v: `${projects.length}` },
+            { k: 'LANGUAGES',  v: 'REACT · PYTHON'     },
+            { k: 'DOMAIN',     v: 'WEB · ML · API'     },
+          ].map(({ k, v }) => (
+            <div key={k} className="summary-item">
+              <div style={{ fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '4px' }}>{k}</div>
+              <div style={{ fontSize: '11px', fontWeight: 700, color: '#0a0a0a', letterSpacing: '0.05em' }}>{v}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Footer tape */}
+        <div style={{
+          ...mono,
+          fontSize: '9px',
+          letterSpacing: '0.15em',
+          color: '#c8c5be',
+          marginTop: '24px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '6px',
+        }}>
+          <span>SHABEEB KARUVATH · PORTFOLIO_V2</span>
+          <span>DOC·PROJECTS · {new Date().getFullYear()}</span>
+        </div>
+
+      </section>
+    </>
   );
 }

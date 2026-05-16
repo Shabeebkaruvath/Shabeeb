@@ -1,18 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/Shabeeb/manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      href="https://img.icons8.com/ios/500/shortcuts.png"
+    />
     <!-- SEO -->
     <title>Shabeeb — React Developer & ML Student</title>
-    <meta name="description" content="Shabeeb is a ReactJS developer with 2+ years of experience building clean, high-performance web applications, currently bridging front-end development with Machine Learning." />
-    <meta name="keywords" content="Shabeeb, React developer, frontend developer, machine learning, web development, portfolio" />
+    <meta
+      name="description"
+      content="Shabeeb is a ReactJS developer with 2+ years of experience building clean, high-performance web applications, currently bridging front-end development with Machine Learning."
+    />
+    <meta
+      name="keywords"
+      content="Shabeeb, React developer, frontend developer, machine learning, web development, portfolio"
+    />
     <meta name="author" content="Shabeeb Karuvath" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Shabeeb — React Developer & ML Student" />
-    <meta property="og:description" content="ReactJS developer with 2+ years of experience. Currently bridging front-end and Machine Learning." />
+    <meta
+      property="og:title"
+      content="Shabeeb — React Developer & ML Student"
+    />
+    <meta
+      property="og:description"
+      content="ReactJS developer with 2+ years of experience. Currently bridging front-end and Machine Learning."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/Shabeeb/pwa-512x512.png" />
 
@@ -27,11 +44,28 @@
     <!-- Fonts: DM Serif Display + DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" crossorigin src="/Shabeeb/assets/index-sp2qdmhH.js"></script>
     <link rel="stylesheet" crossorigin href="/Shabeeb/assets/index-_P1EJ1B8.css">
   <link rel="manifest" href="/Shabeeb/manifest.webmanifest"></head>
   <body>
     <div id="root"></div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/Shabeeb/sw.js")
+            .then((reg) =>
+              console.log("Service Worker Registered Successfully!", reg.scope),
+            )
+            .catch((err) =>
+              console.log("Service Worker Registration Failed:", err),
+            );
+        });
+      }
+    </script>
   </body>
 </html>

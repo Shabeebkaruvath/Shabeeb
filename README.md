@@ -1,1 +1,1 @@
-### 🔗 [Click here for Live Preview](https://shabeebkaruvath.github.io/Shabeeb/)
+### 🔗 [Click here for Live Preview](shabeeb-sandy.vercel.app)

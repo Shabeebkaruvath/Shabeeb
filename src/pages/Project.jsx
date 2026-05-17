@@ -1,6 +1,4 @@
-import { FaGithub } from 'react-icons/fa';
-
-const mono = { fontFamily: '"SF Mono","Fira Mono","Roboto Mono",ui-monospace,monospace' };
+import React from 'react';
 
 const projects = [
   {
@@ -47,128 +45,87 @@ const projects = [
 
 function ProjectRow({ project, index }) {
   return (
-    <div className="project-row" style={{
-      borderBottom: '1px solid #e0ddd6',
-    }}>
+    <div className="grid grid-cols-1 md:grid-cols-12 border-b border-[#D5D5D3] last:border-[#1C1C1A] items-stretch">
 
-      {/* Left meta column */}
-      <div className="project-meta" style={{
-        backgroundColor: index % 2 === 0 ? 'transparent' : '#fafaf8',
-      }}>
+      {/* LEFT METADATA SIDEBAR PANEL */}
+      <div className={`md:col-span-2 p-4 flex md:flex-col justify-between md:justify-start gap-4 border-b md:border-b-0 md:border-r border-[#D5D5D3] text-[10px] ${
+        index % 2 === 0 ? 'bg-transparent' : 'bg-[#EBEBEA]/40'
+      }`}>
         <div>
-          <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '3px' }}>ID</div>
-          <div style={{ ...mono, fontSize: '10px', fontWeight: 700, color: '#0a0a0a' }}>{project.id}</div>
+          <span className="block text-[8px] font-bold tracking-widest text-[#7E7E7A] mb-0.5">ID_CODE</span>
+          <span className="font-bold text-[#1C1C1A]">{project.id}</span>
         </div>
         <div>
-          <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '3px' }}>YR</div>
-          <div style={{ ...mono, fontSize: '10px', fontWeight: 700, color: '#0a0a0a' }}>{project.year}</div>
+          <span className="block text-[8px] font-bold tracking-widest text-[#7E7E7A] mb-0.5">SYS_YR</span>
+          <span className="font-bold text-[#1C1C1A]">{project.year}</span>
         </div>
         <div>
-          <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '3px' }}>STS</div>
-          <div style={{ ...mono, fontSize: '9px', fontWeight: 700, color: '#0a0a0a', letterSpacing: '0.05em' }}>
-            ● {project.status}
-          </div>
+          <span className="block text-[8px] font-bold tracking-widest text-[#7E7E7A] mb-0.5">STATUS</span>
+          <span className="font-bold text-[#1C1C1A] flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> {project.status}
+          </span>
         </div>
       </div>
 
-      {/* Right content column */}
-      <div className="project-body">
-
-        {/* Main content */}
-        <div className="project-content-pad" style={{ padding: '20px 20px' }}>
-
-          {/* Title */}
-          <div style={{
-            ...mono,
-            fontSize: 'clamp(0.95rem, 2vw, 1.15rem)',
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            color: '#0a0a0a',
-            marginBottom: '10px',
-          }}>
-            {project.title}
+      {/* RIGHT CHASSIS BODY PANEL */}
+      <div className="md:col-span-10 grid grid-cols-1 sm:grid-cols-12 items-stretch bg-[#F9F9F9]">
+        
+        {/* Central Data Block */}
+        <div className="sm:col-span-8 p-5 md:p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <h3 className="text-sm sm:text-base font-bold text-[#1C1C1A] tracking-wider font-mono mb-2">
+              {project.title}
+            </h3>
+            <p className="text-xs text-[#4D4D4A] leading-relaxed font-sans font-light max-w-2xl">
+              {project.desc}
+            </p>
           </div>
 
-          {/* Description */}
-          <div style={{
-            ...mono,
-            fontSize: '11px',
-            lineHeight: 1.85,
-            color: '#6b6b6b',
-            marginBottom: '14px',
-            maxWidth: '60ch',
-          }}>
-            {project.desc}
-          </div>
+          {/* Micro Tactical Button Grid */}
+          <div className="space-y-4">
+            <div className="flex flex-wrap gap-1.5">
+              {project.stack.map(tag => (
+                <span key={tag} className="text-[9px] font-bold tracking-wide px-2 py-0.5 bg-white border border-[#D5D5D3] text-[#5A6E6A] rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-          {/* Stack tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '16px' }}>
-            {project.stack.map(tag => (
-              <span key={tag} style={{
-                ...mono,
-                fontSize: '9px',
-                letterSpacing: '0.1em',
-                padding: '3px 9px',
-                border: '1px solid #0a0a0a',
-                color: '#0a0a0a',
-              }}>
-                {tag}
-              </span>
-            ))}
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] tracking-widest text-[#1C1C1A] hover:text-[#FF4F00] text-decoration-none inline-flex items-center gap-1.5 font-bold group border-b border-[#1C1C1A] pb-0.5 w-fit"
+            >
+              <svg className="w-3.5 h-3.5 transition-transform group-hover:scale-105" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+              VIEW_SOURCE // EXT ↗
+            </a>
           </div>
-
-          {/* GitHub link */}
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              ...mono,
-              fontSize: '10px',
-              letterSpacing: '0.15em',
-              color: '#0a0a0a',
-              textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              borderBottom: '1px solid #0a0a0a',
-              paddingBottom: '1px',
-              fontWeight: 700,
-            }}
-          >
-            <FaGithub size={11} />
-            VIEW_SOURCE ↗
-          </a>
         </div>
 
-        {/* Image panel */}
-        <div className="project-image-container">
+        {/* Modular Hardware Viewfinder */}
+        <div className="sm:col-span-4 border-t sm:border-t-0 sm:border-l border-[#D5D5D3] bg-[#EBEBEA]/30 overflow-hidden relative min-h-[140px] flex items-stretch">
           {project.image ? (
             <img
               src={project.image}
               alt={project.title}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              className="w-full h-full object-cover grayscale brightness-95 contrast-105 hover:grayscale-0 transition-all duration-300"
             />
           ) : (
-            <div style={{
-              width: '100%', height: '100%',
-              minHeight: '160px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '6px',
-              backgroundColor: '#f5f4f0',
-            }}>
-              <div style={{ ...mono, fontSize: '1.4rem', fontWeight: 700, color: '#d0cdc8' }}>
+            <div className="w-full p-4 flex flex-col items-center justify-center gap-1 text-center m-auto">
+              <span className="text-xl font-bold text-[#A1A19E] tracking-widest font-mono">
                 {project.id.split('-')[1]}
-              </div>
-              <div style={{ ...mono, fontSize: '8px', letterSpacing: '0.12em', color: '#c8c5be' }}>
-                NO_IMG
-              </div>
+              </span>
+              <span className="text-[8px] font-bold tracking-widest text-[#C2D6D1] bg-[#5A6E6A]/10 px-1.5 py-0.5 rounded">
+                NULL_IMAGE_FEED
+              </span>
             </div>
           )}
         </div>
+
       </div>
     </div>
   );
@@ -176,183 +133,41 @@ function ProjectRow({ project, index }) {
 
 export default function Projects() {
   return (
-    <>
-      {/* ── RESPONSIVE STYLES ── */}
-      <style>
-        {`
-          .projects-section {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 32px 120px;
-          }
-          .list-header {
-            display: grid;
-            grid-template-columns: 90px 1fr;
-            border-bottom: 1px solid #0a0a0a;
-            background-color: #f5f4f0;
-          }
-          .project-row {
-            display: grid;
-            grid-template-columns: 90px 1fr;
-          }
-          .project-meta {
-            border-right: 1px solid #e0ddd6;
-            padding: 20px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-          }
-          .project-body {
-            display: grid;
-            grid-template-columns: 1fr auto;
-          }
-          .project-image-container {
-            width: 140px;
-            border-left: 1px solid #e0ddd6;
-            overflow: hidden;
-            flex-shrink: 0;
-            position: relative;
-            min-height: 160px;
-          }
-          .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border-left: 1px solid #0a0a0a;
-          }
-          .summary-item {
-            border-right: 1px solid #0a0a0a;
-            border-bottom: 1px solid #0a0a0a;
-            padding: 12px 16px;
-          }
+    <section className="max-w-5xl mx-auto px-4 md:px-8 pb-24 font-mono text-[#1C1C1A] bg-[#F4F4F3] selection:bg-[#FF4F00] selection:text-white">
 
-          /* Tablet & Mobile Layout */
-          @media (max-width: 768px) {
-            .projects-section {
-              padding: 0 24px 80px;
-            }
-            .list-header {
-              display: none; /* Hide tabular header on small screens */
-            }
-            .project-row {
-              grid-template-columns: 1fr;
-            }
-            .project-meta {
-              flex-direction: row;
-              flex-wrap: wrap;
-              border-right: none;
-              border-bottom: 1px solid #e0ddd6;
-              padding: 12px 20px;
-              gap: 24px;
-            }
-            .project-body {
-              grid-template-columns: 1fr;
-            }
-            .project-image-container {
-              width: 100%;
-              height: 240px;
-              border-left: none;
-              border-top: 1px solid #e0ddd6;
-            }
-            .summary-grid {
-              grid-template-columns: 1fr;
-              border-right: 1px solid #0a0a0a;
-            }
-            .summary-item {
-              border-right: none;
-            }
-          }
+      {/* ── TOP HEADER RUNTIME STRIP ── */}
+      <div className="border-b border-[#1C1C1A] flex items-center justify-between py-2.5 text-[10px] font-bold text-[#7E7E7A] tracking-widest">
+        <span>DOC: PROJECT_REGISTRY // REV.02</span>
+        <span>UNITS: 0{projects.length} // STATUS: SHIPPED_STABLE</span>
+      </div>
 
-          /* Small Mobile Adjustments */
-          @media (max-width: 480px) {
-            .projects-section {
-              padding: 0 16px 60px;
-            }
-            .project-meta {
-              gap: 16px;
-              padding: 12px 16px;
-            }
-            .project-content-pad {
-              padding: 20px 16px !important;
-            }
-            .project-image-container {
-              height: 200px;
-            }
-          }
-        `}
-      </style>
+      {/* ── LEDGER MATRIX COMPONENT GRID ── */}
+      <div className="border-t border-[#1C1C1A] mt-4">
+        {projects.map((project, i) => (
+          <ProjectRow key={project.id} project={project} index={i} />
+        ))}
+      </div>
 
-      <section className="projects-section">
-
-        {/* Top label bar */}
-        <div style={{
-          ...mono,
-          borderBottom: '1px solid #0a0a0a',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '8px 0',
-          flexWrap: 'wrap',
-          gap: '6px',
-        }}>
-          <span style={{ fontSize: '9px', letterSpacing: '0.2em', color: '#9b9b9b' }}>
-            DOC·PROJECTS / REV.2
-          </span>
-          <span style={{ fontSize: '9px', letterSpacing: '0.2em', color: '#9b9b9b' }}>
-            UNITS: {projects.length} / STATUS: ALL_SHIPPED
-          </span>
-        </div>
-
-        {/* Column headers */}
-        <div className="list-header">
-          <div style={{ ...mono, fontSize: '9px', letterSpacing: '0.15em', color: '#9b9b9b', padding: '8px 16px', borderRight: '1px solid #0a0a0a' }}>
-            META
+      {/* ── LOWER TELEMETRY DATA MATRIX ── */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 border-l border-[#1C1C1A] bg-[#EBEBEA]/20">
+        {[
+          { k: 'TOTAL_PRJ',  v: `0${projects.length} // STABLE_BUILDS` },
+          { k: 'LANGUAGES',  v: 'REACT_JS // PYTHON_3' },
+          { k: 'DOMAINS',     v: 'WEB_APPS // INFERENCE_ML' },
+        ].map(({ k, v }) => (
+          <div key={k} className="border-r border-b border-[#1C1C1A] p-4 flex flex-col justify-between min-h-[64px]">
+            <span className="text-[8px] font-bold tracking-widest text-[#7E7E7A]">{k}_LOG</span>
+            <span className="text-[11px] font-bold tracking-wider text-[#1C1C1A]">{v}</span>
           </div>
-          <div style={{ ...mono, fontSize: '9px', letterSpacing: '0.15em', color: '#9b9b9b', padding: '8px 20px' }}>
-            PROJECT_DATA
-          </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Project rows */}
-        <div style={{ borderTop: '1px solid #0a0a0a' }}>
-          {projects.map((project, i) => (
-            <ProjectRow key={project.id} project={project} index={i} />
-          ))}
-        </div>
+      {/* ── RUNTIME REAR TAPE FOOTER ── */}
+      <div className="flex flex-col sm:flex-row items-center justify-between mt-8 text-[9px] font-bold tracking-widest text-[#7E7E7A] gap-2">
+        <span>M.S.K // SYSTEM_CONSOLE_DRIVE</span>
+        <span>INDEX_PROJECTS // BUILD_2026</span>
+      </div>
 
-        {/* Summary bar */}
-        <div className="summary-grid" style={{
-          ...mono,
-          borderTop: '1px solid #0a0a0a',
-        }}>
-          {[
-            { k: 'TOTAL_PRJ',  v: `${projects.length}` },
-            { k: 'LANGUAGES',  v: 'REACT · PYTHON'     },
-            { k: 'DOMAIN',     v: 'WEB · ML · API'     },
-          ].map(({ k, v }) => (
-            <div key={k} className="summary-item">
-              <div style={{ fontSize: '8px', letterSpacing: '0.15em', color: '#9b9b9b', marginBottom: '4px' }}>{k}</div>
-              <div style={{ fontSize: '11px', fontWeight: 700, color: '#0a0a0a', letterSpacing: '0.05em' }}>{v}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Footer tape */}
-        <div style={{
-          ...mono,
-          fontSize: '9px',
-          letterSpacing: '0.15em',
-          color: '#c8c5be',
-          marginTop: '24px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '6px',
-        }}>
-          <span>SHABEEB KARUVATH · PORTFOLIO_V2</span>
-          <span>DOC·PROJECTS · {new Date().getFullYear()}</span>
-        </div>
-
-      </section>
-    </>
+    </section>
   );
 }

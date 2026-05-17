@@ -37,9 +37,9 @@ export default function Home() {
               MDL: SK-001 // REACT_ENGINE // ML_ARCH
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-normal font-sans tracking-tighter text-[#1C1C1A] leading-[0.9]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-normal font-sans tracking-tighter text-[#FF4F00] leading-[0.9]">
               SHABEEB<br />
-              <span className="text-[#A1A19E]">KARUVATH</span>
+              <span className="text-[#000000]">KARUVATH</span>
             </h1>
 
             <div className="text-xs sm:text-sm leading-relaxed text-[#4D4D4A] max-w-xl border-l-2 border-[#1C1C1A] pl-4 space-y-1">

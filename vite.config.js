@@ -3,8 +3,12 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-export default defineConfig(({ command }) => ({
-  base: process.env.GITHUB_PAGES === 'true' ? '/Shabeeb/' : '/',
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const base = isGitHubPages ? '/Shabeeb/' : '/';
+
+export default defineConfig({
+  base,
+
   plugins: [
     react(),
     tailwindcss(),
@@ -12,9 +16,10 @@ export default defineConfig(({ command }) => ({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: "Shabeeb",
-        short_name: "Shabeeb",
-        start_url: '/',
+        name: 'Shabeeb',
+        short_name: 'Shabeeb',
+        start_url: base,         // ✅ matches base — fixes PWA on GH Pages
+        scope: base,             // ✅ add this too, keeps PWA scoped correctly
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#000000',
@@ -27,4 +32,4 @@ export default defineConfig(({ command }) => ({
       },
     }),
   ],
-}));
+});
